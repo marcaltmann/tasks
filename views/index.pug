@@ -1,8 +1,12 @@
 extends layout.pug
 
 block content
-  h1 #{title}
+  h1 Welcome to tasks
 
   ul
-    each task in tasks
-      li #{task.name}
+    li
+      a(href="/projects") Projects
+    li
+      a(href="/tasks") Tasks
+    li
+      a(href="/categories") Categories
