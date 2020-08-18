@@ -1,9 +1,7 @@
-const animal = 'alligator';
-
 const tasks = [
   {
     id: 0,
-    name: animal.repeat(1000),
+    name: 'Call agent and ask about new jobs/projects',
   },
   {
     id: 1,

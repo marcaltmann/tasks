@@ -1,9 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
+import Tasks from './components/tasks.jsx';
 
-function HelloWorld() {
-  return <h1>Hello world!</h1>;
+function Application() {
+  return (
+    <div className="application">
+      <Tasks/>
+    </div>
+  );
 }
 
 const domContainer = document.querySelector('#app_container');
-ReactDOM.render(<HelloWorld/>, domContainer);
+ReactDOM.render(<Application/>, domContainer);
