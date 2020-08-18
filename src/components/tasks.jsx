@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Task from './task.jsx';
 
 function Tasks() {
   const [tasks, setTasks] = useState(null);
@@ -20,12 +21,10 @@ function Tasks() {
   return (
     <div>
       <h3>Tasks</h3>
-      <ul>
+      <ul className="Tasklist">
         {
           tasks.map(task => (
-            <li key={task.id}>
-              {task.name}
-            </li>
+            <Task key={task.id} name={task.name} className="Tasklist-item"/>
           ))
         }
       </ul>
