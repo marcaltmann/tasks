@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Tasks from './components/tasks.jsx';
+
+import 'spectre.css';
 import './style.scss';
 
 function Application() {
