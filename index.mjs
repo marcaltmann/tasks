@@ -6,6 +6,7 @@ let port = process.env.PORT || 3000;
 let app = express();
 
 app.use(compression());
+app.use(express.static('public'));
 
 app.set('view engine', 'pug');
 
