@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Tasks from './components/tasks.jsx';
+import Categories from './components/categories.jsx';
 
 import 'spectre.css';
 import './style.scss';
@@ -8,7 +8,7 @@ import './style.scss';
 function Application() {
   return (
     <div className="application container">
-      <Tasks/>
+      <Categories/>
     </div>
   );
 }

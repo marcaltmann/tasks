@@ -1,33 +1,16 @@
 import { tasks, projects, categories } from './data.mjs';
 
+function categoriesWithTasks() {
+  let clonedCategories = categories.map(cat => Object.assign({}, cat));
+
+  clonedCategories.forEach((cat) => {
+    cat.tasks = tasks.filter(task => task.category === cat.id);
+  });
+
+  return clonedCategories;
+}
+
 function router(app) {
-  // Normal routes
-  app.get('/tasks', (req, res) => {
-    res.render('tasks', {
-      tasks,
-      title: 'Tasks',
-    });
-  });
-
-  app.get('/projects', (req, res) => {
-    res.render('projects', {
-      projects,
-      title: 'Projects',
-    });
-  });
-
-  app.get('/categories', (req, res) => {
-    res.render('categories', {
-      categories,
-      title: 'Categories',
-    });
-  });
-
-  app.get('/', (req, res) => {
-    res.render('index', { title: 'Welcome' });
-  });
-
-  // API routes
   app.get('/api/tasks', (req, res) => {
     res.json({
       tasks,
@@ -42,7 +25,7 @@ function router(app) {
 
   app.get('/api/categories', (req, res) => {
     res.json({
-      categories,
+      categories: categoriesWithTasks(),
     });
   });
 }

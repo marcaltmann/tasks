@@ -8,10 +8,8 @@ let app = express();
 app.use(compression());
 app.use(express.static('dist'));
 
-app.set('view engine', 'pug');
-
 router(app);
 
 app.listen(port, () => {
-  console.log(`Server listening on port ${port}.`);
+  console.log(`Server listening at http://localhost:${port}`);
 });

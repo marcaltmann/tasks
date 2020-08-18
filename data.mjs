@@ -2,42 +2,20 @@ const tasks = [
   {
     id: 0,
     name: 'Call agent and ask about new jobs/projects',
+    category: 0,
+    project: 0,
   },
   {
     id: 1,
-    name: 'Call agent and ask about new jobs/projects',
+    name: 'Sort tax documents for 2019 tax declaration',
+    category: 1,
+    project: 0,
   },
   {
     id: 2,
-    name: 'Call agent and ask about new jobs/projects',
-  },
-  {
-    id: 3,
-    name: 'Call agent and ask about new jobs/projects',
-  },
-  {
-    id: 4,
-    name: 'Call agent and ask about new jobs/projects',
-  },
-  {
-    id: 5,
-    name: 'Call agent and ask about new jobs/projects',
-  },
-  {
-    id: 6,
-    name: 'Call agent and ask about new jobs/projects',
-  },
-  {
-    id: 7,
-    name: 'Call agent and ask about new jobs/projects',
-  },
-  {
-    id: 8,
-    name: 'Call agent and ask about new jobs/projects',
-  },
-  {
-    id: 9,
-    name: 'Call agent and ask about new jobs/projects',
+    name: 'Make list of job/project listing sources',
+    category: 1,
+    project: 0,
   },
 ];
 
@@ -52,6 +30,14 @@ const categories = [
   {
     id: 0,
     name: 'Communicate',
+  },
+  {
+    id: 1,
+    name: 'Home',
+  },
+  {
+    id: 2,
+    name: 'Town',
   },
 ];
 
