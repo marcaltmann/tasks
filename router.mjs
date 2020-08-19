@@ -1,3 +1,4 @@
+import path from 'path';
 import { tasks, projects, categories } from './data.mjs';
 
 function categoriesWithTasks() {
@@ -27,6 +28,10 @@ function router(app) {
     res.json({
       categories: categoriesWithTasks(),
     });
+  });
+
+  app.get('/*', (req, res) => {
+    res.sendFile(path.join(process.cwd(), 'dist', 'index.html'));
   });
 }
 
