@@ -19,7 +19,7 @@ function Categories() {
   }
 
   return (
-    <div>
+    <>
       <h1>Tasks</h1>
       <ul>
         {
@@ -28,7 +28,7 @@ function Categories() {
           ))
         }
       </ul>
-    </div>
+    </>
   );
 }
 
