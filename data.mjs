@@ -3,19 +3,16 @@ const tasks = [
     id: 0,
     name: 'Call agent and ask about new jobs/projects',
     category: 0,
-    project: 0,
   },
   {
     id: 1,
-    name: 'Sort tax documents for 2019 tax declaration',
+    name: 'Sort tax documents for 2019',
     category: 1,
-    project: 0,
   },
   {
     id: 2,
-    name: 'Make list of job/project listing sources',
+    name: 'Find video about correct flossing',
     category: 1,
-    project: 0,
   },
 ];
 
@@ -23,6 +20,17 @@ const projects = [
   {
     id: 0,
     name: 'Find new job/project',
+    nextTask: 0,
+  },
+  {
+    id: 1,
+    name: 'Tax declaration 2019',
+    nextTask: 1,
+  },
+  {
+    id: 2,
+    name: 'Dental health',
+    nextTask: 2,
   },
 ];
 

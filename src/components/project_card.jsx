@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ProjectCard({ title, tasks }) {
+function ProjectCard({ title, task }) {
   return (
     <li className="card">
       <header className="card-header">
@@ -9,15 +9,7 @@ function ProjectCard({ title, tasks }) {
         </h4>
       </header>
       <div className="card-body">
-        <ul>
-          {
-            tasks.map(task => (
-              <li key={task.id}>
-                {task.name}
-              </li>
-            ))
-          }
-        </ul>
+        {task}
       </div>
     </li>
   );

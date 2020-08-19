@@ -15,7 +15,7 @@ function projectsWithTasks() {
   let clonedProjects = projects.map(proj => Object.assign({}, proj));
 
   clonedProjects.forEach(proj => {
-    proj.tasks = tasks.filter(task => task.project === proj.id);
+    proj.nextTask = tasks.find(task => task.id === proj.nextTask);
   });
 
   return clonedProjects;

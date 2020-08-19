@@ -28,7 +28,9 @@ function ProjectsPage() {
       <ul>
         {
           projects.map(proj => (
-            <ProjectCard key={proj.id} title={proj.name} tasks={proj.tasks} />
+            <ProjectCard key={proj.id}
+              title={proj.name}
+              task={proj.nextTask.name} />
           ))
         }
       </ul>
