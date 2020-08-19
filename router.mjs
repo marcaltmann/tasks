@@ -11,6 +11,16 @@ function categoriesWithTasks() {
   return clonedCategories;
 }
 
+function projectsWithTasks() {
+  let clonedProjects = projects.map(proj => Object.assign({}, proj));
+
+  clonedProjects.forEach(proj => {
+    proj.tasks = tasks.filter(task => task.project === proj.id);
+  });
+
+  return clonedProjects;
+}
+
 function router(app) {
   app.get('/api/tasks', (req, res) => {
     res.json({
@@ -20,7 +30,7 @@ function router(app) {
 
   app.get('/api/projects', (req, res) => {
     res.json({
-      projects,
+      projects: projectsWithTasks(),
     });
   });
 

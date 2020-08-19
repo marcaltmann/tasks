@@ -22,6 +22,7 @@ function Categories() {
   return (
     <>
       <h1>Tasks</h1>
+
       <ul>
         {
           categories.map(cat => (
