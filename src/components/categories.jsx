@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from '@reach/router';
 import Category from './category.jsx';
 
 function Categories() {
@@ -28,6 +29,10 @@ function Categories() {
           ))
         }
       </ul>
+
+      <p>
+        <Link to="/projects">Projects</Link>
+      </p>
     </>
   );
 }
