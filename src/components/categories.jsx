@@ -1,23 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from '@reach/router';
+
 import Category from './category.jsx';
 
-function Categories() {
-  const [categories, setCategories] = useState(null);
-
-  useEffect(() => {
-    fetch('/api/categories')
-      .then(response => response.json())
-      .then(data => setCategories(data.categories));
-  }, []);
-
-  if (categories === null) {
-    return (
-      <div>
-        <h3>Loading…</h3>
-      </div>
-    );
+function categoriesSelector(state) {
+  if (state.categories === null) {
+    return [];
   }
+
+  return state.categories.result;
+}
+
+function Categories() {
+  const categories = useSelector(categoriesSelector);
 
   return (
     <>
@@ -25,8 +21,8 @@ function Categories() {
 
       <ul>
         {
-          categories.map(cat => (
-            <Category key={cat.id} title={cat.name} tasks={cat.tasks} />
+          categories.map(id => (
+            <Category key={id} id={id} />
           ))
         }
       </ul>
