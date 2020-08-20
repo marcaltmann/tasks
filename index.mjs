@@ -6,6 +6,7 @@ let port = process.env.PORT || 3000;
 let app = express();
 
 app.use(compression());
+app.use(express.json());
 app.use(express.static('dist'));
 
 router(app);

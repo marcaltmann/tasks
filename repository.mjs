@@ -24,4 +24,10 @@ function getCategoriesWithTasks() {
   return clonedCategories;
 }
 
+function updateProjectName(projectId, name) {
+  let project = projects.find(proj => proj.id === projectId);
+  project.name = name;
+}
+
 export { getTasks, getCategoriesWithTasks, getProjectsWithTasks };
+export { updateProjectName };

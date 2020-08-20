@@ -24,6 +24,10 @@ function router(app) {
   app.get('/*', (req, res) => {
     res.sendFile(path.join(process.cwd(), 'dist', 'index.html'));
   });
+
+  app.put('/api/update-project-name', (req, res) => {
+    console.log(req.body);
+  });
 }
 
 export default router;
