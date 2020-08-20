@@ -7,7 +7,7 @@ function* fetchCategories(action) {
   console.log('before yield')
   try {
     const categories = yield call(Api.fetchCategories);
-    yield put({ type: 'CATEGORIES_FETCH_SUCCEEDED', categories: categories });
+    yield put({ type: 'CATEGORIES_FETCH_SUCCEEDED', payload : categories });
   } catch (e) {
     yield put({ type: 'CATEGORIES_FETCH_FAILED', message: e.message });
   }

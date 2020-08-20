@@ -3,11 +3,12 @@ import createSagaMiddleware from 'redux-saga';
 
 import reducer from './reducers/index.js';
 import mySaga from './sagas.js';
+import initializeStore from './initialize_store.js';
 
 const sagaMiddleware = createSagaMiddleware();
 const storeEnhancers = compose(
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(sagaMiddleware)
+  applyMiddleware(sagaMiddleware),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 const store = createStore(
@@ -16,5 +17,7 @@ const store = createStore(
 );
 
 sagaMiddleware.run(mySaga);
+
+initializeStore(store);
 
 export default store;

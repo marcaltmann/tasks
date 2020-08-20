@@ -1,6 +1,8 @@
 let Api = {
   fetchCategories() {
-    return fetch('/api/categories');
+    return fetch('/api/categories')
+      .then(response => response.json())
+      .then(body => body.categories);
   },
 };
 
