@@ -27,6 +27,8 @@
     "css-loader": "^4.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5",
     "sass": "^1.26.10",
     "sass-loader": "^9.0.3",
     "spectre.css": "^0.5.9",
