@@ -1,9 +1,17 @@
-function categories(state = null, action) {
+const initialState = {
+  byId: {},
+  byOrder: [],
+};
+
+function categories(state = initialState, action) {
   switch (action.type) {
     case 'CATEGORIES_FETCH_SUCCEEDED':
-      return action.payload;
+      return {
+        byId: action.payload.entities.categories,
+        byOrder: action.payload.result,
+      };
     case 'CATEGORIES_FETCH_FAILED':
-      return null;
+      return initialState;
     default:
       return state;
   }

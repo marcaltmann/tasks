@@ -4,16 +4,8 @@ import { Link } from '@reach/router';
 
 import Category from './category.jsx';
 
-function categoriesSelector(state) {
-  if (state.categories === null) {
-    return [];
-  }
-
-  return state.categories.result;
-}
-
 function Categories() {
-  const categories = useSelector(categoriesSelector);
+  const categories = useSelector((state) => state.categories.byOrder);
 
   return (
     <>
