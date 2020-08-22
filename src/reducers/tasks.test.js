@@ -13,7 +13,7 @@ test('saves tasks by id with categories fetch succeeding', () => {
     byId: {},
   };
   let action = {
-    type: 'CATEGORIES_FETCH_SUCCEEDED',
+    type: 'categories/fetchSucceeded',
     payload: {
       result: [],
       entities: {
@@ -40,7 +40,7 @@ test('clears tasks with categories fetch failing (why?)', () => {
     byId: { 0: 'task' },
   };
   let action = {
-    type: 'CATEGORIES_FETCH_FAILED',
+    type: 'categories/fetchFailed',
     message: 'Network error',
   };
   let result = tasksReducer(previousState, action);

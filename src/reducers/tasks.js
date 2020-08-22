@@ -2,11 +2,11 @@ const initialState = { byId: {} };
 
 function tasks(state = initialState, action) {
   switch (action.type) {
-    case 'CATEGORIES_FETCH_SUCCEEDED':
+    case 'tasks/fetchSucceeded':
       return {
         byId: action.payload.entities.tasks,
       };
-    case 'CATEGORIES_FETCH_FAILED':
+    case 'tasks/fetchFailed':
       return initialState;
     default:
       return state;

@@ -1,5 +1,5 @@
 import path from 'path';
-import { getTasks, getProjectsWithTasks, getCategoriesWithTasks }
+import { getTasks, getProjects, getCategories }
   from './repository.mjs';
 
 function router(app) {
@@ -11,13 +11,13 @@ function router(app) {
 
   app.get('/api/projects', (req, res) => {
     res.json({
-      projects: getProjectsWithTasks(),
+      projects: getProjects(),
     });
   });
 
   app.get('/api/categories', (req, res) => {
     res.json({
-      categories: getCategoriesWithTasks(),
+      categories: getCategories(),
     });
   });
 

@@ -5,12 +5,12 @@ const initialState = {
 
 function categories(state = initialState, action) {
   switch (action.type) {
-    case 'CATEGORIES_FETCH_SUCCEEDED':
+    case 'categories/fetchSucceeded':
       return {
         byId: action.payload.entities.categories,
         byOrder: action.payload.result,
       };
-    case 'CATEGORIES_FETCH_FAILED':
+    case 'categories/fetchFailed':
       return initialState;
     default:
       return state;

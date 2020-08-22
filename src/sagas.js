@@ -15,9 +15,9 @@ function* fetchCategories(action) {
   }
 }
 
-// Starts fetchCategories on CATEGORIES_FETCH_REQUESTED action.
+// Starts fetchCategories on categories/fetchRequested action.
 function* mySaga() {
-  yield takeLatest('CATEGORIES_FETCH_REQUESTED', fetchCategories);
+  yield takeLatest('categories/fetchRequested', fetchCategories);
 }
 
 export default mySaga;
