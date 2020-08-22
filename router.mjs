@@ -3,6 +3,14 @@ import { getTasks, getProjects, getCategories }
   from './repository.mjs';
 
 function router(app) {
+  app.get('/api/all', (req, res) => {
+    res.json({
+      categories: getCategories(),
+      projects: getProjects(),
+      tasks: getTasks(),
+    });
+  });
+
   app.get('/api/tasks', (req, res) => {
     res.json({
       tasks: getTasks(),
