@@ -7,8 +7,8 @@ function categories(state = initialState, action) {
   switch (action.type) {
     case 'categories/fetchSucceeded':
       return {
-        byId: action.payload.entities.categories,
-        byOrder: action.payload.result,
+        byId: action.payload.categories.entities.categories,
+        byOrder: action.payload.categories.result,
       };
     case 'categories/fetchFailed':
       return initialState;

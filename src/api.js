@@ -1,9 +1,6 @@
-let Api = {
-  fetchCategories() {
-    return fetch('/api/categories')
-      .then(response => response.json())
-      .then(body => body.categories);
+export default {
+  fetchData() {
+    return fetch('/api/all')
+      .then(response => response.json());
   },
 };
-
-export default Api;

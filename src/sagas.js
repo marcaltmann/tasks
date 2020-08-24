@@ -2,22 +2,20 @@ import 'regenerator-runtime/runtime';
 import { call, put, takeLatest } from 'redux-saga/effects';
 
 import Api from './api.js';
-import { createCategoriesFetchSucceeded, createCategoriesFetchFailed }
+import { createDataFetchSucceeded, createDataFetchFailed }
   from './action_creators.js';
 
-// Worker saga: will be fired on ... action
-function* fetchCategories(action) {
+function* fetchData(action) {
   try {
-    const categories = yield call(Api.fetchCategories);
-    yield put(createCategoriesFetchSucceeded(categories));
+    const data = yield call(Api.fetchData);
+    yield put(createDataFetchSucceeded(data));
   } catch (error) {
-    yield put(createCategoriesFetchFailed(error));
+    yield put(createDataFetchFailed(error));
   }
 }
 
-// Starts fetchCategories on categories/fetchRequested action.
 function* mySaga() {
-  yield takeLatest('categories/fetchRequested', fetchCategories);
+  yield takeLatest('data/fetchRequested', fetchData);
 }
 
 export default mySaga;
