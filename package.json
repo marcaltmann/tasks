@@ -8,7 +8,7 @@
   "main": "index.mjs",
   "scripts": {
     "build": "webpack",
-    "lint": "eslint src/**/*",
+    "lint": "eslint {src/**/*.js,src/**/*.jsx}",
     "start": "node index.mjs",
     "test": "jest"
   },
