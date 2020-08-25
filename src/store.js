@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 
-import reducer from './reducers/index.js';
-import mySaga from './sagas.js';
+import reducer from './reducer.js';
+import { categoriesSaga, tasksSaga } from './sagas.js';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -12,6 +12,7 @@ const store = configureStore({
   devTools: process.env.NODE_ENV !== 'production',
 });
 
-sagaMiddleware.run(mySaga);
+sagaMiddleware.run(categoriesSaga);
+sagaMiddleware.run(tasksSaga);
 
 export default store;

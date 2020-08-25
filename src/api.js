@@ -13,4 +13,9 @@ export default {
       .then(response => response.json())
       .then(body => normalize(body.categories, categoryListSchema));
   },
+  fetchTasks() {
+    return fetch('/api/tasks')
+      .then(response => response.json())
+      .then(body => normalize(body.tasks, taskListSchema));
+  },
 };

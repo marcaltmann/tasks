@@ -1,9 +1,9 @@
-import categoriesSlice from './categories_slice.js';
+import { slice as categoriesSlice } from './categories/index.js';
+import { slice as tasksSlice } from './tasks/index.js';
 
 function initializeStore(reduxStore) {
-  const { actions } = categoriesSlice;
-  const { requestFetch } = actions;
-  reduxStore.dispatch(requestFetch());
+  reduxStore.dispatch(categoriesSlice.actions.requestFetch());
+  reduxStore.dispatch(tasksSlice.actions.requestFetch());
 }
 
 export default initializeStore;

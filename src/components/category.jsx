@@ -2,8 +2,10 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import classNames from 'classnames';
 
+import { categoryByIdSelector } from '../categories';
+
 function Category(props) {
-  const category = useSelector(state => state.categories.byId[props.id]);
+  const category = useSelector(state => categoryByIdSelector(state, props.id));
 
   return (
     <li className={classNames('card', props.className)}>

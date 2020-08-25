@@ -3,15 +3,11 @@ import { useSelector } from 'react-redux';
 import { Link } from '@reach/router';
 
 import Category from './category.jsx';
+import { categoriesLoadedSelector, categoryIdsSelector } from '../categories';
 
 function Categories() {
-  const categoriesAreLoaded = useSelector(state => state.categories !== null);
-  const categoryIds = useSelector(state => {
-    if (!categoriesAreLoaded) {
-      return [];
-    }
-    return state.categories.allIds;
-  });
+  const categoriesAreLoaded = useSelector(categoriesLoadedSelector);
+  const categoryIds = useSelector(categoryIdsSelector);
 
   return (
     <>
