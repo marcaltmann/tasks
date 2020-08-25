@@ -1,5 +1,9 @@
+import categoriesSlice from './categories_slice.js';
+
 function initializeStore(reduxStore) {
-  reduxStore.dispatch({ type: 'data/fetchRequested' });
+  const { actions } = categoriesSlice;
+  const { requestFetch } = actions;
+  reduxStore.dispatch(requestFetch());
 }
 
 export default initializeStore;

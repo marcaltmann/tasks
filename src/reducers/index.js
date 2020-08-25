@@ -1,12 +1,8 @@
 import { combineReducers } from 'redux';
-import categories from './categories.js';
-import counter from './counter.js';
-import tasks from './tasks.js';
+import categoriesSlice from '../categories_slice.js';
 
 let rootReducer = combineReducers({
-  categories,
-  counter,
-  tasks,
+  categories: categoriesSlice.reducer,
 });
 
 export default rootReducer;

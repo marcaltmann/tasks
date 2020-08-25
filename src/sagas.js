@@ -2,20 +2,21 @@ import 'regenerator-runtime/runtime';
 import { call, put, takeLatest } from 'redux-saga/effects';
 
 import Api from './api.js';
-import { createDataFetchSucceeded, createDataFetchFailed }
-  from './action_creators.js';
+import categoriesSlice from './categories_slice.js';
 
-function* fetchData(action) {
+function* fetchCategories() {
+  const { actions: { resolveFetch, rejectFetch } } = categoriesSlice;
   try {
-    const data = yield call(Api.fetchData);
-    yield put(createDataFetchSucceeded(data));
-  } catch (error) {
-    yield put(createDataFetchFailed(error));
+    const data = yield call(Api.fetchCategories);
+    yield put(resolveFetch(data));
+  } catch (e) {
+    yield put(rejectFetch(e.message));
   }
 }
 
-function* mySaga() {
-  yield takeLatest('data/fetchRequested', fetchData);
+function* categoriesSaga() {
+  const { actions: { requestFetch } } = categoriesSlice;
+  yield takeLatest(requestFetch.type, fetchCategories);
 }
 
-export default mySaga;
+export default categoriesSaga;
