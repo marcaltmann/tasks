@@ -3,15 +3,7 @@ import { useSelector } from 'react-redux';
 import classNames from 'classnames';
 
 function Category(props) {
-
-  function categoryTasksSelector(state) {
-    const category = state.categories.byId[props.id];
-    const tasks = category.tasks.map(taskId => state.tasks.byId[taskId]);
-    return tasks;
-  }
-
-  const category = useSelector((state) => state.categories.byId[props.id]);
-  const tasks = useSelector(categoryTasksSelector);
+  const category = useSelector(state => state.categories.byId[props.id]);
 
   return (
     <li className={classNames('card', props.className)}>
@@ -22,11 +14,6 @@ function Category(props) {
       </header>
       <div className="card-body">
         <ul>
-          {
-            tasks.map(task => (
-              <li key={task.id}>{task.name}</li>
-            ))
-          }
         </ul>
       </div>
     </li>

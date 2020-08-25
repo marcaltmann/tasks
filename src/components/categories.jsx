@@ -5,7 +5,13 @@ import { Link } from '@reach/router';
 import Category from './category.jsx';
 
 function Categories() {
-  const categories = useSelector((state) => state.categories.byOrder);
+  const categoriesAreLoaded = useSelector(state => state.categories !== null);
+  const categoryIds = useSelector(state => {
+    if (!categoriesAreLoaded) {
+      return [];
+    }
+    return state.categories.allIds;
+  });
 
   return (
     <>
@@ -13,7 +19,7 @@ function Categories() {
 
       <ul>
         {
-          categories.map(id => (
+          categoryIds.map(id => (
             <Category key={id} id={id} />
           ))
         }
